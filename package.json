@@ -1,0 +1,12 @@
+{
+"name": "progetto-traiettorie",
+"version": "1.0.0",
+"description": "Finestra desktop per plottare traiettorie di successi dopo n tentativi",
+"main": "main.js",
+"scripts": {
+"start": "electron ."
+},
+"devDependencies": {
+"electron": "^25.0.0"
+}
+}

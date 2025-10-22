@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Success Trajectories Chart</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 15px; }
+        .controls { margin-bottom: 10px; }
+        .controls input { width: 60px; margin-right: 10px; }
+        button { margin-right: 10px; margin-top: 5px; }
+        #chartsContainer { display: flex; gap: 20px; align-items: flex-start; }
+
+        .chartWrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        canvas { background-color: #f9f9f9; }
+        .chartLabel { margin-bottom: 5px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="controls">
+        Number of trials (max 20 to plot all trajectories properly): <input type="number" id="nInput" value="10" min="1" max="10000">
+        Probability of success for each trial: <input type="number" id="pInput" value="0.5" step="0.01" min="0" max="1">
+
+        <br><br>
+        <button id="plotSingleBtn">Plot single trajectory</button>
+        <button id="plotAllBtn">Plot all trajectories</button>
+        <button id="clearBtn">Clear chart</button>
+    </div>
+
+    <div id="chartsContainer">
+        <div class="chartWrapper">
+            <div class="chartLabel">Trajectory Graph</div>
+            <canvas id="chartTraj" width="700" height="500"></canvas>
+        </div>
+
+        <div class="chartWrapper">
+            <div class="chartLabel">Relative Frequency Graph for Each Run</div>
+            <canvas id="chartHist" width="300" height="500"></canvas>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="renderer.js"></script>
+</body>
+</html>
+
+
