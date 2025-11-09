@@ -7,6 +7,13 @@
   <!-- Chart.js via CDN -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
+    #charts {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  flex-wrap: nowrap;        /* <-- prevents wrapping */
+  min-width: 1100px;        /* <-- forces Google Sites iframe to stay wide */
+    }
     body { font-family: Arial, Helvetica, sans-serif; padding: 14px; }
     h1 { font-size: 20px; margin: 0 0 8px 0; }
     .controls { margin: 8px 0 14px 0; display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
@@ -58,4 +65,5 @@
 
   <script src="renderer7.js"></script>
 </body>
+
 </html>
