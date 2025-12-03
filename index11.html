@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Brownian Motion Simulation</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; padding: 14px; }
+    h1 { font-size: 20px; margin: 0 0 8px 0; }
+    .controls { margin: 8px 0 14px 0; display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+    input[type=number] { width:80px; padding:6px; }
+    button { padding:8px 12px; }
+    
+    #charts {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      flex-wrap: nowrap;
+    }
+    .chartBox {
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+    canvas {
+      background:#fff;
+      border:1px solid #ddd;
+    }
+    #note { margin-top:10px; color:#444; font-size:0.9em; max-width: 900px; line-height: 1.5; }
+  </style>
+</head>
+
+<body>
+  <h1>Arithmetic Brownian Motion Simulation</h1>
+
+  <div class="controls">
+    <label>Time (T):
+      <input id="tInput" type="number" min="1" value="50">
+    </label>
+    <label>Steps (N):
+      <input id="stepsInput" type="number" min="10" value="100">
+    </label>
+    <label>Drift (&mu;):
+      <input id="muInput" type="number" step="0.1" value="0.5">
+    </label>
+    <label>Volatility (&sigma;):
+      <input id="sigmaInput" type="number" step="0.1" min="0" value="2.0">
+    </label>
+
+    <button id="generateBtn">Generate</button>
+    <button id="resetBtn">Reset</button>
+  </div>
+
+  <div id="charts">
+
+    <div class="chartBox" style="width:560px;">
+      <div class="label">Trajectories: X(t) = &mu;t + &sigma;W(t)</div>
+      <canvas id="trajChart" width="550" height="360"></canvas>
+    </div>
+
+    <div class="chartBox" style="width:420px;">
+      <div class="label">Distribution of Final Values at T</div>
+      <canvas id="histChart" width="400" height="360"></canvas>
+    </div>
+
+  </div>
+
+  <div id="note"></div>
+
+  <script src="renderer11.js"></script>
+</body>
+</html>
